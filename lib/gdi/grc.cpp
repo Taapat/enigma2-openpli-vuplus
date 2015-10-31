@@ -107,7 +107,9 @@ void *gRC::thread()
 {
 	int need_notify = 0;
 #ifdef USE_LIBVUGLES2
+	eDebug("[gRC] USE LIBVUGLES2");
 	if (gles_open()) {
+		eDebug("[gRC] gles viewport");
 		gles_state_open();
 		gles_viewport(720, 576, 720 * 4);
 	}
@@ -204,6 +206,7 @@ void *gRC::thread()
 		}
 	}
 #ifdef USE_LIBVUGLES2
+	eDebug("[gRC] gles state_close");
 	gles_state_close();
 	gles_close();
 #endif
@@ -624,6 +627,7 @@ void gPainter::end()
 
 void gPainter::sendShow(ePoint point, eSize size)
 {
+	eDebug("[gRC] sendShow");
 	if ( m_dc->islocked() )
 		return;
 	gOpcode o;
@@ -637,6 +641,7 @@ void gPainter::sendShow(ePoint point, eSize size)
 
 void gPainter::sendHide(ePoint point, eSize size)
 {
+	eDebug("[gRC] sendHide");
 	if ( m_dc->islocked() )
 		return;
 	gOpcode o;
@@ -651,6 +656,7 @@ void gPainter::sendHide(ePoint point, eSize size)
 #ifdef USE_LIBVUGLES2
 void gPainter::setView(eSize size)
 {
+	eDebug("[gRC] setView");
 	if ( m_dc->islocked() )
 		return;
 	gOpcode o;
