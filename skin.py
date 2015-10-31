@@ -281,7 +281,7 @@ class AttributeParser:
 	def animationPaused(self, value):
 		pass
 	def animationMode(self, value):
-		guiObject.setAnimationMode(
+		self.guiObject.setAnimationMode(
 			{ "disable": 0x00,
 				"off": 0x00,
 				"offshow": 0x10,
