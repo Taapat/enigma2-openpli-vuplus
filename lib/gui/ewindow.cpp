@@ -119,8 +119,10 @@ void eWindow::show()
 {
 	eDebug("[eWindow] show");
 	if (m_animation_mode & 0x01)
+	{
 		eDebug("[eWindow] sendShow");
 		m_desktop->sendShow(position(), size());
+	}
 	eWidget::show();
 }
 
@@ -128,8 +130,10 @@ void eWindow::hide()
 {
 	eDebug("[eWindow] hide");
 	if (m_animation_mode & 0x10)
+	{
 		eDebug("[eWindow] sendHide");
 		m_desktop->sendHide(position(), size());
+	}
 	eWidget::hide();
 }
 
