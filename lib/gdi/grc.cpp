@@ -208,6 +208,7 @@ void *gRC::thread()
 #ifdef USE_LIBVUGLES2
 	eDebug("[gRC] gles state_close");
 	gles_state_close();
+	eDebug("[gRC] gles close");
 	gles_close();
 #endif
 #ifndef SYNC_PAINT
