@@ -205,13 +205,13 @@ void *gRC::thread()
 #endif
 		}
 	}
-#ifndef SYNC_PAINT
 #ifdef USE_LIBVUGLES2
 	eDebug("[gRC] gles state_close");
 	gles_state_close();
 	eDebug("[gRC] gles close");
 	gles_close();
 #endif
+#ifndef SYNC_PAINT
 	pthread_exit(0);
 #endif
 	return 0;
