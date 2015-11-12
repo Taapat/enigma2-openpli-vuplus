@@ -147,22 +147,17 @@ void gFBDC::exec(const gOpcode *o)
 	}
 	case gOpcode::flush:
 #ifdef USE_LIBVUGLES2
-		eDebug("[gFBDC] USE LIBVUGLES2");
 		if (gles_is_animation())
-			eDebug("[gFBDC] gles do animation");
 			gles_do_animation();
 		else
-			eDebug("[gFBDC] blit");
 			fb->blit();
 #else
-		eDebug("[gFBDC] NOT USE LIBVUGLES2");
 		fb->blit();
 #endif
 		break;
 	case gOpcode::sendShow:
 	{
 #ifdef USE_LIBVUGLES2
-		eDebug("[gFBDC] gles set animation");
 		gles_set_buffer((unsigned int *)surface.data);
 		gles_set_animation(1, o->parm.setShowHideInfo->point.x(), o->parm.setShowHideInfo->point.y(), o->parm.setShowHideInfo->size.width(), o->parm.setShowHideInfo->size.height());
 #endif
@@ -171,7 +166,6 @@ void gFBDC::exec(const gOpcode *o)
 	case gOpcode::sendHide:
 	{
 #ifdef USE_LIBVUGLES2
-		eDebug("[gFBDC] gles set animation");
 		gles_set_buffer((unsigned int *)surface.data);
 		gles_set_animation(0, o->parm.setShowHideInfo->point.x(), o->parm.setShowHideInfo->point.y(), o->parm.setShowHideInfo->size.width(), o->parm.setShowHideInfo->size.height());
 #endif
@@ -180,7 +174,6 @@ void gFBDC::exec(const gOpcode *o)
 #ifdef USE_LIBVUGLES2
 	case gOpcode::setView:
 	{
-		eDebug("[gFBDC] gles viewport");
 		gles_viewport(o->parm.setViewInfo->size.width(), o->parm.setViewInfo->size.height(), fb->Stride());
 		break;
 	}

@@ -524,16 +524,13 @@ void eWidgetDesktop::resize(eSize size)
 	m_screen.m_dirty_region = gRegion(eRect(ePoint(0, 0), size));
 	m_screen.m_screen_size = size;
 #ifdef USE_LIBVUGLES2
-	eDebug("[eWidgetDesktop] USE LIBVUGLES2");
 	gPainter painter(m_screen.m_dc);
 	painter.setView(size);
 #endif
-	eDebug("[eWidgetDesktop] NOT USE LIBVUGLES2");
 }
 
 void eWidgetDesktop::sendShow(ePoint point, eSize size)
 {
-	eDebug("[eWidgetDesktop] sendShow");
 	if(m_style_id!=0)
 		return;
 
@@ -543,7 +540,6 @@ void eWidgetDesktop::sendShow(ePoint point, eSize size)
 
 void eWidgetDesktop::sendHide(ePoint point, eSize size)
 {
-	eDebug("[eWidgetDesktop] sendHide");
 	if(m_style_id!=0)
 		return;
 
