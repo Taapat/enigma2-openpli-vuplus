@@ -149,15 +149,11 @@ void gFBDC::exec(const gOpcode *o)
 #ifdef USE_LIBVUGLES2
 		eDebug("[gFBDC] USE LIBVUGLES2");
 		if (gles_is_animation())
-		{
 			eDebug("[gFBDC] gles do animation");
 			gles_do_animation();
-		}
 		else
-		{
 			eDebug("[gFBDC] blit");
 			fb->blit();
-		}
 #else
 		eDebug("[gFBDC] NOT USE LIBVUGLES2");
 		fb->blit();
