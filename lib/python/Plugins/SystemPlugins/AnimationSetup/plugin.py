@@ -130,7 +130,7 @@ class AnimationSetupScreen(Screen):
 		self["introduction"] = StaticText(_("* current animation"))
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("Save"))
-		self["key_yellow"] = StaticText(_("Setting"))
+		self["key_yellow"] = StaticText(_("Settings"))
 		self["key_blue"] = StaticText(_("Preview"))
 
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
