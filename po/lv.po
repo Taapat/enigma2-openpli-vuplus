@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-01 21:38+0200\n"
+"POT-Creation-Date: 2015-11-12 18:52+0200\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -350,6 +350,9 @@ msgstr "(rādīt papildu DVD skaņas izvēlni)"
 msgid "* Only available if more than one interface is active."
 msgstr "* Pieejams ja ir aktīvs vairāk nekā viens interfeiss."
 
+msgid "* current animation"
+msgstr "* pašreizējā animācija"
+
 msgid "/s"
 msgstr "/s"
 
@@ -518,6 +521,9 @@ msgstr ""
 
 msgid "A recording is currently running. Please stop the recording before trying to scan."
 msgstr "Pašreiz notiek ieraksts. Pirms mēģināt meklēt lūdzu apturiet ierakstu."
+
+msgid "A recording is currently running. Please stop the recording before trying to start a testing DiSEqC."
+msgstr "Pašreiz notiek ieraksts. Lūdzu apturiet ierakstu pirms mēģiniet testēt DiSEqC."
 
 #, python-format
 msgid "A required tool (%s) was not found."
@@ -784,6 +790,15 @@ msgstr "Nezināma kļūda!"
 msgid "And will put your receiver in standby over "
 msgstr "Un iestatīt uztvērēju gaidstāvē pēc "
 
+msgid "Animation Setup"
+msgstr "Animācijas iestatījumi"
+
+msgid "Animation Speed"
+msgstr "Animācijas ātrums"
+
+msgid "Animations"
+msgstr "Animācija"
+
 msgid "Any activity"
 msgstr "Jebkura aktivitāte"
 
@@ -903,6 +918,9 @@ msgstr "Audio valodas izvēle 4"
 
 msgid "Audio options..."
 msgstr "Skaņas opcijas..."
+
+msgid "Audio plugins"
+msgstr "Audio spraudņi"
 
 #, python-format
 msgid "Audio track (%s) format"
@@ -2025,6 +2043,9 @@ msgstr "DiSEqC A/B"
 msgid "DiSEqC A/B/C/D"
 msgstr "DiSEqC A/B/C/D"
 
+msgid "DiSEqC Tester"
+msgstr "DiSEqC tests"
+
 msgid "DiSEqC mode"
 msgstr "DiSEqC režīms"
 
@@ -2057,6 +2078,9 @@ msgstr "Mape satur %s un %s."
 
 msgid "Disable"
 msgstr "Izslēgt"
+
+msgid "Disable Animations"
+msgstr "Izslēgt animāciju"
 
 msgid "Disable Picture in Picture"
 msgstr "Izslēgt attēls attēlā"
@@ -2475,6 +2499,9 @@ msgstr "Notikuma apskats"
 msgid "Event view menu"
 msgstr "Notikuma apskata izvēlne"
 
+msgid "Every known"
+msgstr "Zināms"
+
 msgid "Everywhere"
 msgstr "Jebkur"
 
@@ -2604,6 +2631,9 @@ msgstr "Neizdevās"
 
 msgid "Failed to write /tmp/positionersetup.log: "
 msgstr "Neizdevās ierakstīt /tmp/positionersetup.log: "
+
+msgid "Failed:"
+msgstr "Neizdevās:"
 
 msgid "Fallback remote receiver URL"
 msgstr "Rezerves uztvērēja adrese"
@@ -2855,6 +2885,12 @@ msgstr "Zaļā"
 
 msgid "Green boost"
 msgstr "Zaļā piesātinājums"
+
+msgid "Grow drop"
+msgstr "Izvērst uz leju"
+
+msgid "Grow from left"
+msgstr "Izvērst no kreisās"
 
 msgid "Guard interval"
 msgstr "Guard intervāls"
@@ -3382,8 +3418,8 @@ msgstr "Noenkurošanās attiecība"
 msgid "Lock:"
 msgstr "Noenkuroties:"
 
-msgid "Log results to harddisk"
-msgstr "Žurnalēt rezultātus uz cietā diska"
+msgid "Log results to /tmp"
+msgstr "Žurnalēt rezultātus /tmp"
 
 msgid "Long filenames"
 msgstr "Garie failu vārdi"
@@ -3801,6 +3837,9 @@ msgstr "Nav atrasts pozicionierim piemērots pavadonis."
 msgid "No priority"
 msgstr "Bez prioritātes"
 
+msgid "No satellite frontend found!"
+msgstr "Nav atrasts piemērots pavadonis!"
+
 msgid "No satellite, terrestrial or cable tuner is configured. Please check your tuner setup."
 msgstr "Nav nokonfigurētu pavadoņu, televīzijas vai kabeļu pieslēgumu. Lūdzu pārbaudiet uztvērēja uzstādījumus."
 
@@ -3911,6 +3950,9 @@ msgstr "Nav konfigurēts"
 #, python-format
 msgid "Not enough disk space. Please free up some disk space and try again. (%d MB required, %d MB available)"
 msgstr "Nav pietiekami vietas uz diska. Lūdzu atbrīvot vietu uz diska un mēģināt vēlreiz. (%d MB ir nepieciešami, bet %d MB pieejami)"
+
+msgid "Not tested:"
+msgstr "Nav pārbaudīts:"
 
 msgid "Note: when enabled, and you do want standby mode after wake up, set option 'Startup to Standby' as 'No, except Wakeup timer'."
 msgstr "Ja iespējots, bet vēlaties pāriet gaidstāvē pēc ieslēgšanas iestatījumā 'Ieslēdzot pāriet gaidstāvē' norādiet 'Lietojot pamodināšanas taimeri'"
@@ -4024,6 +4066,9 @@ msgstr "Cits"
 
 msgid "Output"
 msgstr "Izeja"
+
+msgid "Overall progress:"
+msgstr "Izpilda:"
 
 msgid "Overwrite configuration files during software upgrade?"
 msgstr "Pārrakstīt konfigurācijas failus atjaunojot programmatūru?"
@@ -4380,6 +4425,9 @@ msgstr "Polarizācija"
 msgid "Polish"
 msgstr "Poļu"
 
+msgid "Popup"
+msgstr "Pleilināt no centra"
+
 msgid "Port A"
 msgstr "Ports A"
 
@@ -4527,7 +4575,7 @@ msgid "Prev"
 msgstr "Iepriekšējais"
 
 msgid "Preview"
-msgstr "Priekšskatījums"
+msgstr "Apskatīt"
 
 msgid "Preview menu"
 msgstr "Priekšskatījuma izvēlne"
@@ -4558,6 +4606,9 @@ msgstr "Progresa josla pa kreisi"
 
 msgid "Progress bar right"
 msgstr "Progresa josla pa labi"
+
+msgid "Progress:"
+msgstr "Progress:"
 
 msgid "Properties of current title"
 msgstr "Aktīvā nosaukuma parametri"
@@ -4627,6 +4678,9 @@ msgstr "Ātrais"
 
 msgid "Quick zap"
 msgstr "Ātrā pārslēgšana"
+
+msgid "REC"
+msgstr "IER"
 
 msgid "RF output"
 msgstr "RF izeja"
@@ -5683,6 +5737,9 @@ msgstr "Līdzīgi raidījumi:"
 msgid "Simple"
 msgstr "Vienkāršs"
 
+msgid "Simple fade"
+msgstr "Plūdeniski parādīt"
+
 msgid "Simple titleset (compatibility for legacy players)"
 msgstr "Vienkāršu simbolu lietojums nosaukumos (savietojamībai ar parastiem atskaņotājiem)"
 
@@ -5731,11 +5788,20 @@ msgstr "Miega taimeris"
 msgid "Sleeptimer edit"
 msgstr "Miega taimeris"
 
+msgid "Slide drop"
+msgstr "Slīdēt no augšas"
+
+msgid "Slide left to right"
+msgstr "Slīdēt no kreisās"
+
 msgid "Slide picture in loop"
 msgstr "Rādīt attēlus pa apli"
 
 msgid "Slide show interval (sec.)"
 msgstr "Slīdrādes intervāls (sek.)"
+
+msgid "Slide top to bottom"
+msgstr "Slīdēt no ekrāna augšas"
 
 #, python-format
 msgid "Slot %d"
@@ -6050,6 +6116,9 @@ msgstr "Plūsma"
 msgid "Stream request"
 msgstr "Plūsmas pieprasījums"
 
+msgid "Stripes"
+msgstr "Svītras"
+
 msgid "Strongest position"
 msgstr "Ciešā pozīcija"
 
@@ -6106,6 +6175,9 @@ msgstr "Subtitri"
 
 msgid "Subtitles Settings"
 msgstr "Subtitru izvēle"
+
+msgid "Succeeded:"
+msgstr "Izdevās:"
 
 msgid "Sun"
 msgstr "Sv"
@@ -6346,8 +6418,8 @@ msgid "The pin code you entered is wrong."
 msgstr "Jūsu ievadītais PIN kods ir nepareizs."
 
 #, python-format
-msgid "The results have been written to %s."
-msgstr "Rezultāti saglabāti %s."
+msgid "The results have been written to %s"
+msgstr "Rezultāti tiks ierakstīti %s"
 
 msgid "The sleep timer has been activated."
 msgstr "Miega taimeris tika aktivizēts."
@@ -7500,6 +7572,9 @@ msgstr "Bezvadu tīkla savienojuma iestatījumi."
 msgid "Wireless network state"
 msgstr "Bezvadu tīkla statuss"
 
+msgid "With errors:"
+msgstr "Ar kļūdām:"
+
 msgid "With popup"
 msgstr "Ar uznirstošo logu"
 
@@ -8123,6 +8198,9 @@ msgstr "iziet no tīkla adaptera iestatīšanas izvēlnes"
 msgid "experimental film/video"
 msgstr "eksperimentālās filmas/video"
 
+msgid "failed"
+msgstr "neizdevās"
+
 msgid "false"
 msgstr "nepatiess"
 
@@ -8387,8 +8465,14 @@ msgstr "nav noenkurojies"
 msgid "not supported"
 msgstr "nav atbalstīts"
 
+msgid "not tested"
+msgstr "nav testēts"
+
 msgid "not used"
 msgstr "neizmantots"
+
+msgid "not_tested"
+msgstr ""
 
 msgid "nothing connected"
 msgstr "nekas nav pievienots"
@@ -8666,6 +8750,9 @@ msgstr "stereo"
 msgid "stop using as startup service"
 msgstr "pārtraukt lietot kā ieslēgšanas kanālu"
 
+msgid "successful"
+msgstr "veiksmīgi"
+
 msgid "switch to bookmarks"
 msgstr "iet uz grāmatzīmēm"
 
@@ -8735,6 +8822,9 @@ msgstr "nezināms kanāls"
 msgid "unpublished"
 msgstr "nepublicēts"
 
+msgid "untestable"
+msgstr "netestēts"
+
 msgid "until standby/restart"
 msgstr "līdz gaidstāvei/pārstartēšanai"
 
@@ -8789,6 +8879,9 @@ msgid_plural "with %d errors"
 msgstr[0] "ar %d kļūdu"
 msgstr[1] "ar %d kļūdām"
 msgstr[2] "ar %d kļūdām"
+
+msgid "with errors"
+msgstr "ar kļūdām"
 
 msgid "with text"
 msgstr "ar tekstu"
