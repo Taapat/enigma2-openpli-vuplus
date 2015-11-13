@@ -9,19 +9,13 @@ from Plugins.Plugin import PluginDescriptor
 
 from enigma import setAnimation_current, setAnimation_speed
 
-# default = slide to left
-g_default = {
-        "current": 6,
-        "speed"  : 20,
-}
-g_max_speed = 30
 
 g_animation_paused = False
 g_orig_show = None
 g_orig_doClose = None
 
-config.misc.window_animation_default = ConfigNumber(default=g_default["current"])
-config.misc.window_animation_speed = ConfigSelectionNumber(1, g_max_speed, 1, default=g_default["speed"])
+config.misc.window_animation_default = ConfigNumber(default = 6)
+config.misc.window_animation_speed = ConfigSelectionNumber(1, 30, 1, default = 20)
 
 class AnimationSetupConfig(ConfigListScreen, Screen):
 	skin=   """
@@ -64,7 +58,7 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 
 	def keyGreen(self):
 		config.misc.window_animation_speed.save()
-                setAnimation_speed(int(config.misc.window_animation_speed.value))
+		setAnimation_speed(int(config.misc.window_animation_speed.value))
 		self.close()
 
 	def keyRed(self):
@@ -72,8 +66,7 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 		self.close()
 
 	def keyYellow(self):
-                global g_default
-                config.misc.window_animation_speed.value = g_default["speed"]
+		config.misc.window_animation_speed.value = 20
 		self.makeConfigList()
 
 	def keyLeft(self):
@@ -166,13 +159,13 @@ class AnimationSetupScreen(Screen):
 			setAnimation_current(key)
 		self.close()
 
-        def keyclose(self):
+	def keyclose(self):
 		setAnimation_current(config.misc.window_animation_default.value)
-                setAnimation_speed(int(config.misc.window_animation_speed.value))
+		setAnimation_speed(int(config.misc.window_animation_speed.value))
 		self.close()
 
 	def config(self):
-                self.session.open(AnimationSetupConfig)
+		self.session.open(AnimationSetupConfig)
 
 	def preview(self):
 		current = self["list"].getCurrent()
@@ -231,7 +224,7 @@ def sessionAnimationSetup(session, reason, **kwargs):
 	Screen.doClose = screen_doClose
 
 def Plugins(**kwargs):
-	plugin_list = [
+	return [
 		PluginDescriptor(
 			name = "Animations",
 			description = "Setup UI animations",
@@ -242,5 +235,5 @@ def Plugins(**kwargs):
 			where = PluginDescriptor.WHERE_SESSIONSTART,
 			needsRestart = False,
 			fnc = sessionAnimationSetup),
-	]
-	return plugin_list;
+		]
+
