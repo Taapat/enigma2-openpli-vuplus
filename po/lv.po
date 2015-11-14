@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 18:52+0200\n"
+"POT-Creation-Date: 2015-11-14 18:55+0200\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -1207,11 +1207,11 @@ msgstr "Kanāls"
 msgid "Channel Info"
 msgstr "Info par kanālu"
 
-msgid "Channel list type"
-msgstr "Kanālu saraksta veids"
-
 msgid "Channel not in services list"
 msgstr "Kanāls nav kanālu sarakstā"
+
+msgid "Channel list type"
+msgstr "Kanālu saraksta veids"
 
 msgid "Channel selection"
 msgstr "Kanālu izvēle"
@@ -1671,9 +1671,6 @@ msgstr "Konfigurē"
 
 msgid "Conflict not resolved!"
 msgstr "Konflikts nav novērsts!"
-
-msgid "Conflicting timer"
-msgstr "Konfliktējošs taimeris"
 
 msgid "Connect"
 msgstr "Savienoties"
@@ -3047,6 +3044,9 @@ msgstr ""
 "Tad noregulējiet iespējami zemu spilgtuma iestatījumu, bet pārliecinieties, ka divi apakšējie pelēkā toņi ir izšķirami.\n"
 "Pašreiz nepievērsiet uzmanību spilgtajiem toņiem. Tie tiks instalēti nākamajā solī.\n"
 "Ja esat apmierināts ar rezultātu, spiediet OK."
+
+msgid "Ignore conflict"
+msgstr "Ignorēt konfliktus"
 
 msgid "Image: "
 msgstr "Imidžs: "
@@ -7545,9 +7545,6 @@ msgstr ""
 "\n"
 "Vai tiešām atjaunot rūpnīcas iestatījumus?"
 
-msgid "When you use the remote fallback tuner to do recording, the timer conflict detection can't handle remote fallback tuners. This option allows you to turn off the timer confict detection"
-msgstr "Ja jūs ierakstam lietojat citu uztvērēju, tad taimeru konflikta noteikšanu var veikt šis uztvērējs. Šis iestatījums atļauj izslēgt taimeru konflikta noteikšanu."
-
 msgid "Where do you want to backup your settings?"
 msgstr "Kur Jūs vēlaties veidot savu iestatījumu dublējumkopiju?"
 
@@ -8883,11 +8880,17 @@ msgstr[2] "ar %d kļūdām"
 msgid "with errors"
 msgstr "ar kļūdām"
 
+msgid "with errors"
+msgstr "ar kļūdām"
+
 msgid "with text"
 msgstr "ar tekstu"
 
 msgid "with tuner name"
 msgstr "ar uztvērēja nosaukumu"
+
+msgid "with_errors"
+msgstr ""
 
 msgid "working"
 msgstr "darbojas"
