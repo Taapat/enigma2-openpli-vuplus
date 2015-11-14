@@ -18,7 +18,7 @@ config.misc.window_animation_default = ConfigNumber(default = 6)
 config.misc.window_animation_speed = ConfigSelectionNumber(1, 30, 1, default = 20)
 
 class AnimationSetupConfig(ConfigListScreen, Screen):
-	skin=   """
+	skin = """
 		<screen position="center,center" size="600,140" title="Animation Settings">
 			<widget name="config" position="0,0" size="600,100" scrollbarMode="showOnDemand" />
 
@@ -26,9 +26,12 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 			<ePixmap pixmap="skin_default/buttons/green.png" position="140,100" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,100" size="140,40" alphatest="on" />
 
-			<widget source="key_red" render="Label" position="0,100" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1" />
-			<widget source="key_green" render="Label" position="140,100" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1" />
-			<widget source="key_yellow" render="Label" position="280,100" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1" />
+			<widget source="key_red" render="Label" position="0,100" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="key_green" render="Label" position="140,100" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="key_yellow" render="Label" position="280,100" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
 		</screen>
 		"""
 
@@ -99,19 +102,25 @@ class AnimationSetupScreen(Screen):
 
 	skin = """
 		<screen name="AnimationSetup" position="center,center" size="580,400" title="Animation Setup">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" zPosition="1" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" zPosition="1" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" zPosition="1" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" zPosition="1" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
 
-			<widget source="key_red" render="Label" position="0,0" zPosition="2" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1" />
-			<widget source="key_green" render="Label" position="140,0" zPosition="2" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1" />
-			<widget source="key_yellow" render="Label" position="280,0" zPosition="2" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1" />
-			<widget source="key_blue" render="Label" position="420,0" zPosition="2" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#18188b" transparent="1" />
+			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
+			<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" \
+				font="Regular;20" halign="center" valign="center" transparent="1" />
 
 			<widget name="list" position="10,60" size="560,364" scrollbarMode="showOnDemand" />
-	                <widget source="introduction" render="Label" position="0,370" size="560,40" zPosition="10" font="Regular;20" valign="center" backgroundColor="#25062748" transparent="1" />
-		</screen>"""
+				<widget source="introduction" render="Label" position="0,370" size="560,40" \
+					font="Regular;20" valign="center" transparent="1" />
+		</screen>
+		"""
 
 	def __init__(self, session):
 
