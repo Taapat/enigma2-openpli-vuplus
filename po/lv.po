@@ -1207,11 +1207,11 @@ msgstr "Kanāls"
 msgid "Channel Info"
 msgstr "Info par kanālu"
 
-msgid "Channel not in services list"
-msgstr "Kanāls nav kanālu sarakstā"
-
 msgid "Channel list type"
 msgstr "Kanālu saraksta veids"
+
+msgid "Channel not in services list"
+msgstr "Kanāls nav kanālu sarakstā"
 
 msgid "Channel selection"
 msgstr "Kanālu izvēle"
@@ -8876,9 +8876,6 @@ msgid_plural "with %d errors"
 msgstr[0] "ar %d kļūdu"
 msgstr[1] "ar %d kļūdām"
 msgstr[2] "ar %d kļūdām"
-
-msgid "with errors"
-msgstr "ar kļūdām"
 
 msgid "with errors"
 msgstr "ar kļūdām"
