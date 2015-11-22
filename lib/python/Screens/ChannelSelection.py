@@ -1498,14 +1498,15 @@ class ChannelSelectionBase(Screen):
 					servicelist = None
 					addCableAndTerrestrialLater = []
 					serviceHandler = eServiceCenter.getInstance()
-					if self.showSatDetails and self.mode is 0: # TV mode
-						typeslist = [self.service_types, '1:7:11:0:0:0:0:0:0:0:(type == 17) || (type == 25) || (type == 134) || (type == 195)']
-					else:
-						typeslist = [self.service_types]
-					for srvtypes in typeslist:
-						ref = eServiceReference('%s FROM SATELLITES ORDER BY satellitePosition'%(srvtypes))
+					service_types_hd = None
+					while True:
+						if service_types_hd:
+							if self.showSatDetails and self.mode is 0: # In TV mode add HD services
+								ref = eServiceReference('%s FROM SATELLITES ORDER BY satellitePosition' % (service_types_hd))
+							else:
+								break
 						servicelist = serviceHandler.list(ref)
-						if not servicelist is None:
+						if servicelist is not None:
 							while True:
 								service = servicelist.getNext()
 								if not service.valid(): #check if end of list
@@ -1538,11 +1539,15 @@ class ChannelSelectionBase(Screen):
 												h = _("E")
 											service_name = ("%d.%d" + h) % (orbpos / 10, orbpos % 10)
 										if self.showSatDetails:
-											if not '(type == 1)' in srvtypes and '(type == 17)' in srvtypes:
-												service_type = "HD-%s"%(service_type)
-											service_type += " (%d)"%(self.getServicesCount(service))
+											if service_types_hd:
+												service_type = "HD-%s" % (service_type)
+											service_type += " (%d)" % (self.getServicesCount(service))
 										service.setName("%s - %s" % (service_name, service_type))
 										self.servicelist.addService(service)
+						if service_types_hd:
+							break
+						else:
+							service_types_hd = '1:7:11:0:0:0:0:0:0:0:(type == 17) || (type == 25) || (type == 134) || (type == 195)'
 					if servicelist is not None:
 						cur_ref = self.session.nav.getCurrentlyPlayingServiceReference()
 						self.servicelist.l.sort()
