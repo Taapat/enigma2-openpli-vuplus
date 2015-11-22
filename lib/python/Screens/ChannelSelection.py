@@ -1541,7 +1541,7 @@ class ChannelSelectionBase(Screen):
 										if self.showSatDetails:
 											if service_types_hd:
 												service_type = "HD-%s" % (service_type)
-											service_type += " (%d)" % (self.getServicesCount(service))
+											service_type += " (%d)" % (self.getServicesCount(serviceHandler.list(service)))
 										service.setName("%s - %s" % (service_name, service_type))
 										self.servicelist.addService(service)
 						if service_types_hd:
@@ -1560,7 +1560,7 @@ class ChannelSelectionBase(Screen):
 								self.service_types[pos+1:])
 							ref = eServiceReference(refstr)
 							if self.showSatDetails:
-								ref.setName(_("Current transponder") + " (%d)"%(self.getServicesCount(ref)))
+								ref.setName(_("Current transponder") + " (%d)"%(self.getServicesCount(serviceHandler.list(ref))))
 							else:
 								ref.setName(_("Current transponder"))
 							self.servicelist.addService(ref, beforeCurrent=True)
@@ -1581,10 +1581,8 @@ class ChannelSelectionBase(Screen):
 								refstr = '1:7:0:0:0:0:%s:0:0:0:(satellitePosition == %s) && %s ORDER BY name' % (op, hop, self.service_types[self.service_types.rfind(':')+1:])
 								self.setCurrentSelectionAlternative(eServiceReference(refstr))
 
-	def getServicesCount(self, ref):
+	def getServicesCount(self, reflist):
 		count = 0
-		serviceHandler = eServiceCenter.getInstance()
-		reflist = serviceHandler.list(ref)
 		if reflist is not None:
 			while True:
 				s = reflist.getNext()
