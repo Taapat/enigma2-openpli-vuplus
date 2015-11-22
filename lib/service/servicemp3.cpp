@@ -752,15 +752,8 @@ RESULT eServiceMP3::start()
 	if (m_gst_playbin)
 	{
 		eDebug("[eServiceMP3] starting pipeline");
-#if GST_VERSION_MAJOR < 1
-		gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
-#else
 		gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
-#endif
-		updateEpgCacheNowNext();
 	}
-
-	m_event(this, evStart);
 
 	return 0;
 }
@@ -821,6 +814,7 @@ RESULT eServiceMP3::pause()
 	if (!m_gst_playbin || m_state != stRunning)
 		return -1;
 
+	eDebug("[eServiceMP3] pause");
 	trickSeek(0.0);
 
 	return 0;
@@ -831,6 +825,14 @@ RESULT eServiceMP3::unpause()
 	if (!m_gst_playbin || m_state != stRunning)
 		return -1;
 
+	/* no need to unpase if we are not paused already */
+	if (m_currentTrickRatio == 1.0 && !m_paused)
+	{
+		eDebug("[eServiceMP3] trickSeek no need to unpause!");
+		return 0;
+	}
+
+	eDebug("[eServiceMP3] unpause");
 	trickSeek(1.0);
 
 	return 0;
@@ -1650,17 +1652,10 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 			{
 				case GST_STATE_CHANGE_NULL_TO_READY:
 				{
-#if GST_VERSION_MAJOR >= 1
-					/* CVR basic init done , now playbin must go to pause until mediasettings are done */
-					if(m_gst_playbin)
-					{
-						gst_element_set_state(m_gst_playbin, GST_STATE_PAUSED);
-						m_paused = true;
-					}
-#endif
 				}	break;
 				case GST_STATE_CHANGE_READY_TO_PAUSED:
 				{
+					gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
 #if GST_VERSION_MAJOR >= 1
 					GValue result = { 0, };
 #endif
@@ -1731,6 +1726,8 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 					setPCMDelay(pcm_delay);
 					if(!m_cuesheet_loaded) /* cuesheet CVR */
 						loadCuesheet();
+					updateEpgCacheNowNext();
+					m_event(this, evStart);
 				}	break;
 				case GST_STATE_CHANGE_PAUSED_TO_PLAYING:
 				{
