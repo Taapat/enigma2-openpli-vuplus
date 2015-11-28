@@ -418,7 +418,6 @@ eServiceMP3::eServiceMP3(eServiceReference ref):
 	m_cuesheet_loaded = false; /* cuesheet CVR */
 #if GST_VERSION_MAJOR >= 1
 	m_use_chapter_entries = false; /* TOC chapter support CVR */
-	m_user_paused = false; /* CVR */
 	m_last_seek_pos = 0; /* CVR last seek position */
 #endif
 	m_extra_headers = "";
@@ -666,8 +665,7 @@ eServiceMP3::~eServiceMP3()
 		gst_object_unref(bus);
 	}
 
-	if (m_state == stRunning)
-		stop();
+	stop();
 
 	if (m_stream_tags)
 		gst_tag_list_free(m_stream_tags);
@@ -748,11 +746,27 @@ RESULT eServiceMP3::start()
 {
 	ASSERT(m_state == stIdle);
 
-	m_state = stRunning;
 	if (m_gst_playbin)
 	{
 		eDebug("[eServiceMP3] starting pipeline");
-		gst_element_set_state (m_gst_playbin, GST_STATE_PAUSED);
+		GstStateChangeReturn ret;
+		ret = gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+
+		switch(ret)
+		{
+		case GST_STATE_CHANGE_FAILURE:
+			eDebug("[eServiceMP3] failed to start pipeline");
+			stop();
+			break;
+		case GST_STATE_CHANGE_SUCCESS:
+			m_is_live = false;
+			break;
+		case GST_STATE_CHANGE_NO_PREROLL:
+			m_is_live = true;
+			break;
+		default:
+			break;
+		}
 	}
 
 	return 0;
@@ -767,14 +781,25 @@ void eServiceMP3::sourceTimeout()
 
 RESULT eServiceMP3::stop()
 {
-	ASSERT(m_state != stIdle);
-
-	if (m_state == stStopped)
+	if (!m_gst_playbin || m_state == stStopped)
 		return -1;
 
 	eDebug("[eServiceMP3] stop %s", m_ref.path.c_str());
-	gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
 	m_state = stStopped;
+
+	GstStateChangeReturn ret;
+	GstState state, pending;
+	/* make sure that last state change was successfull */
+	ret = gst_element_get_state(m_gst_playbin, &state, &pending, 5 * GST_SECOND);
+	eDebug("[eServiceMP3] stop state:%s pending:%s ret:%s",
+		gst_element_state_get_name(state),
+		gst_element_state_get_name(pending),
+		gst_element_state_change_return_get_name(ret));
+
+	ret = gst_element_set_state(m_gst_playbin, GST_STATE_NULL);
+	if (ret != GST_STATE_CHANGE_SUCCESS)
+		eDebug("[eServiceMP3] stop GST_STATE_NULL failure");
+
 	saveCuesheet();
 	m_nownext_timer->stop();
 	if (m_streamingsrc_timeout)
@@ -847,10 +872,7 @@ RESULT eServiceMP3::seek(ePtr<iSeekableService> &ptr)
 
 RESULT eServiceMP3::getLength(pts_t &pts)
 {
-	if (!m_gst_playbin)
-		return -1;
-
-	if (m_state != stRunning)
+	if (!m_gst_playbin || m_state != stRunning)
 		return -1;
 
 	GstFormat fmt = GST_FORMAT_TIME;
@@ -886,19 +908,11 @@ RESULT eServiceMP3::seekToImpl(pts_t to)
 		return -1;
 	}
 
-#if GST_VERSION_MAJOR < 1
 	if (m_paused)
 	{
 		m_seek_paused = true;
 		gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
 	}
-#else
-	if (m_user_paused)
-	{
-		m_seek_paused = true;
-		gst_element_set_state(m_gst_playbin, GST_STATE_PLAYING);
-	}
-#endif
 
 	return 0;
 }
@@ -1047,9 +1061,7 @@ RESULT eServiceMP3::getPlayPosition(pts_t &pts)
 	gint64 pos;
 	pts = 0;
 
-	if (!m_gst_playbin)
-		return -1;
-	if (m_state != stRunning)
+	if (!m_gst_playbin || m_state != stRunning)
 		return -1;
 
 	if (audioSink || videoSink)
@@ -1086,9 +1098,7 @@ RESULT eServiceMP3::isCurrentlySeekable()
 {
 	int ret = 3; /* just assume that seeking and fast/slow winding are possible */
 
-	if (!m_gst_playbin)
-		return 0;
-	if (m_state != stRunning)
+	if (!m_gst_playbin || m_state != stRunning)
 		return 0;
 
 	return ret;
@@ -1652,10 +1662,11 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 			{
 				case GST_STATE_CHANGE_NULL_TO_READY:
 				{
+					m_event(this, evStart);
 				}	break;
 				case GST_STATE_CHANGE_READY_TO_PAUSED:
 				{
-					gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
+					m_state = stRunning;
 #if GST_VERSION_MAJOR >= 1
 					GValue result = { 0, };
 #endif
@@ -1720,7 +1731,11 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 #endif
 					gst_iterator_free(children);
 
-					m_is_live = (gst_element_get_state(m_gst_playbin, NULL, NULL, 0LL) == GST_STATE_CHANGE_NO_PREROLL);
+					/* if we are in preroll already do not check again the state */
+					if (!m_is_live)
+					{
+						m_is_live = (gst_element_get_state(m_gst_playbin, NULL, NULL, 0LL) == GST_STATE_CHANGE_NO_PREROLL);
+					}
 
 					setAC3Delay(ac3_delay);
 					setPCMDelay(pcm_delay);
@@ -1733,9 +1748,6 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 				{
 					if ( m_sourceinfo.is_streaming && m_streamingsrc_timeout )
 						m_streamingsrc_timeout->stop();
-#if GST_VERSION_MAJOR >= 1
-					m_user_paused = false;
-#endif
 					m_paused = false;
 					if (m_seek_paused)
 					{
@@ -1747,9 +1759,6 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 				}	break;
 				case GST_STATE_CHANGE_PLAYING_TO_PAUSED:
 				{
-#if GST_VERSION_MAJOR >= 1
-					m_user_paused = true;
-#endif
 					m_paused = true;
 				}	break;
 				case GST_STATE_CHANGE_PAUSED_TO_READY:
@@ -2022,14 +2031,6 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 				if (m_errorInfo.missing_codec.find("video/") == 0 || (m_errorInfo.missing_codec.find("audio/") == 0 && m_audioStreams.empty()))
 					m_event((iPlayableService*)this, evUser+12);
 			}
-#if GST_VERSION_MAJOR >= 1
-			/* CVR now all audio,video and subsettings are done playbin may go to playing */
-			if(m_paused && !m_user_paused)
-			{
-				gst_element_set_state (m_gst_playbin, GST_STATE_PLAYING);
-				m_paused = false;
-			}
-#endif
 			break;
 		}
 		case GST_MESSAGE_ELEMENT:
@@ -2094,7 +2095,7 @@ void eServiceMP3::gstBusCall(GstMessage *msg)
 			break;
 		}
 		case GST_MESSAGE_BUFFERING:
-			if (m_state == stRunning && m_sourceinfo.is_streaming)
+			if (m_sourceinfo.is_streaming)
 			{
 				GstBufferingMode mode;
 				gst_message_parse_buffering(msg, &(m_bufferInfo.bufferPercent));
