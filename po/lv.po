@@ -2512,7 +2512,7 @@ msgid "Event view menu"
 msgstr "Notikuma apskata izvēlne"
 
 msgid "Events info menu"
-msgstr "Notikuma apskata izvēlne"
+msgstr "Notikumu info izvēlne"
 
 msgid "Every known"
 msgstr "Zināms"
