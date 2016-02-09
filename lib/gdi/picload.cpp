@@ -475,6 +475,7 @@ static void gif_load(Cfilepara* filepara, bool forceRGB = false)
 	ColorMapObject *cmap;
 	int cmaps;
 	int extcode;
+	int ErrorCode;
 
 	gft = DGifOpenFileName(filepara->file, &ErrorCode);
 	if (gft == NULL)
