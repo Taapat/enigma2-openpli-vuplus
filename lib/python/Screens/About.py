@@ -168,7 +168,7 @@ class CommitInfo(Screen):
 		self.project = 0
 		self.projects = [
 			("enigma2-openpli-vuplus", "Enigma2 vuplus"),
-			("vuplus-openpli-oe-core", "vuplus Openpli Oe Core"),
+			("vuplus-fulan-openpli-oe-core", "vuplus fulan Openpli Oe Core"),
 			("enigma2-plugins", "Enigma2 Plugins"),
 			("aio-grab", "Aio Grab"),
 			("gst-plugin-dvbmediasink", "Gst Plugin Dvbmediasink"),
