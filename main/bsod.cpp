@@ -115,7 +115,7 @@ void bsodFatal(const char *component)
 		strftime(tm_str, sizeof(tm_str), "%a %b %_d %T %Y", &tm);
 
 		fprintf(f,
-			"OpenPLi Enigma2 crash log\n\n"
+			"Taapat OpenPLi Enigma2 crash log\n\n"
 			"crashdate=%s\n"
 			"compiledate=%s\n"
 			"skin=%s\n"
@@ -131,9 +131,9 @@ void bsodFatal(const char *component)
 			enigma2_rev,
 			component);
 
-		stringFromFile(f, "stbmodel", "/proc/stb/info/boxtype");
+		//stringFromFile(f, "stbmodel", "/proc/stb/info/boxtype");
 		stringFromFile(f, "stbmodel", "/proc/stb/info/vumodel");
-		stringFromFile(f, "stbmodel", "/proc/stb/info/model");
+		//stringFromFile(f, "stbmodel", "/proc/stb/info/model");
 		stringFromFile(f, "kernelcmdline", "/proc/cmdline");
 		stringFromFile(f, "nimsockets", "/proc/bus/nim_sockets");
 		stringFromFile(f, "imageversion", "/etc/issue");
