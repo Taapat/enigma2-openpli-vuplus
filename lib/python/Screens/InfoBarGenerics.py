@@ -1206,6 +1206,9 @@ class InfoBarSeek:
 			})
 		self.fast_winding_hint_message_showed = False
 
+		self.updateAspectTimer = eTimer()
+		self.updateAspectTimer.callback.append(self.updateAspect)
+
 		class InfoBarSeekActionMap(HelpableActionMap):
 			def __init__(self, screen, *args, **kwargs):
 				HelpableActionMap.__init__(self, screen, *args, **kwargs)
@@ -1364,6 +1367,8 @@ class InfoBarSeek:
 			else:
 				print "resolved to PLAY"
 				pauseable.unpause()
+				# hack to fix movie aspect on vuplus and possibly other receivers
+				self.updateAspectTimer.start(100, True)
 
 		for c in self.onPlayStateChanged:
 			c(self.seekstate)
@@ -1374,6 +1379,14 @@ class InfoBarSeek:
 			self.ScreenSaverTimerStart()
 
 		return True
+
+	def updateAspect(self):
+		# write in the policy2 the same value to set the correct aspect on >16:9
+		try:
+			policy = open("/proc/stb/video/policy2", "r").read()[:-1]
+			open("/proc/stb/video/policy2", "w").write(policy)
+		except IOError:
+			pass
 
 	def playpauseService(self):
 		if self.seekstate != self.SEEK_STATE_PLAY:
