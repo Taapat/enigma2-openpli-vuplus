@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-15 19:08+0200\n"
+"POT-Creation-Date: 2016-02-16 23:02+0200\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -2381,7 +2381,10 @@ msgid "Enable bouquet selection in multi-EPG"
 msgstr "Aktivizēt buķešu izvēli multi-EPG"
 
 msgid "Enable fallback remote receiver"
-msgstr "Aktivizēt papildus rezeves uztvērēju"
+msgstr "Izmantot citu rezeves uztvērēju"
+
+msgid "Enable fallback remote receiver for recordings"
+msgstr "Izmantot citu rezeves uztvērēju ierakstiem"
 
 msgid "Enable freesat EPG"
 msgstr "Aktivizēt freesat EPG"
@@ -2393,7 +2396,10 @@ msgid "Enable parental protection"
 msgstr "Aktivizēt vecāku kontroli"
 
 msgid "Enable remote enigma2 receiver to be tried to tune into services that cannot be tuned into locally (e.g. tuner is occupied or service type is unavailable on the local tuner. Specify complete URL including http:// and port number (normally ...:8001), e.g. http://second_box:8001."
-msgstr "Aktivizēt Enigma2 uztvērēju, kuru izmatot lai mēģinātu uztvert kanālu kurš nav uztverams lokāli (piem. uztvērējs ir aizņemts vai kanāla tips nav pieejams lokālajā uztvērējā). Norādiet pilnu adresi ieskaitot http:// un porta numuru (pēc nolkusējuma ...:8001), piem. http://second_box:8001."
+msgstr "Izmantot citu Enigma2 uztvērēju, kuru lietot lai mēģinātu uztvert kanālu kurš nav uztverams lokāli (piem. uztvērējs ir aizņemts vai kanāla tips nav pieejams lokālajā uztvērējā). Norādiet pilnu adresi ieskaitot http:// un porta numuru (pēc nolkusējuma ...:8001), piem. http://second_box:8001."
+
+msgid "Enable remote enigma2 receiver to be tried to tune into services that cannot be tuned into locally for recordings (e.g. tuner is occupied or service type is unavailable on the local tuner. Specify complete URL including http:// and port number (normally ...:8001), e.g. http://second_box:8001."
+msgstr "Izmantot citu Enigma2 uztvērēju, kuru lietot ierakstiem lai mēģinātu uztvert kanālu kurš nav uztverams lokāli (piem. uztvērējs ir aizņemts vai kanāla tips nav pieejams lokālajā uztvērējā). Norādiet pilnu adresi ieskaitot http:// un porta numuru (pēc nolkusējuma ...:8001), piem. http://second_box:8001."
 
 msgid "Enable teletext caching"
 msgstr "Aktivizēt teleteksta kešošanu"
@@ -3879,6 +3885,9 @@ msgstr "Kanāli/operatori nav izvēlēti"
 
 msgid "No standby"
 msgstr "Nav gaidstāves"
+
+msgid "No stream clients"
+msgstr "Nav neviena straumēšanas klienta"
 
 msgid "No suitable sat tuner found!"
 msgstr "Nav atrasts piemērots sat uztvērējs!"
