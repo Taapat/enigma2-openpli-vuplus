@@ -51,9 +51,6 @@ from RecordTimer import RecordTimerEntry, RecordTimer, findSafeRecordPath
 # hack alert!
 from Menu import MainMenu, mdom
 
-from Components.Converter.ServiceInfo import WIDESCREEN
-
-
 def isStandardInfoBar(self):
 	return self.__class__.__name__ == "InfoBar"
 
@@ -1371,9 +1368,7 @@ class InfoBarSeek:
 				print "resolved to PLAY"
 				pauseable.unpause()
 				# hack to fix movie aspect on vuplus and possibly other receivers
-				info = service and service.info()
-				if info.getInfo(iServiceInformation.sAspect) not in WIDESCREEN:
-					self.updateAspectTimer.start(100, True)
+				self.updateAspectTimer.start(100, True)
 
 		for c in self.onPlayStateChanged:
 			c(self.seekstate)
@@ -2783,6 +2778,7 @@ class VideoMode(Screen):
 		self.Timer.start(1000, True)
 
 	def isWideScreen(self):
+		from Components.Converter.ServiceInfo import WIDESCREEN
 		service = self.session.nav.getCurrentService()
 		info = service and service.info()
 		return info.getInfo(iServiceInformation.sAspect) in WIDESCREEN
