@@ -1368,7 +1368,8 @@ class InfoBarSeek:
 				print "resolved to PLAY"
 				pauseable.unpause()
 				# hack to fix movie aspect on vuplus and possibly other receivers
-				self.updateAspectTimer.start(100, True)
+				if config.av.policy_43.value != "panscan":
+					self.updateAspectTimer.start(100, True)
 
 		for c in self.onPlayStateChanged:
 			c(self.seekstate)
