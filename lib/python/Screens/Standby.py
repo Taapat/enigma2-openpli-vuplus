@@ -33,6 +33,7 @@ class Standby(Screen):
 
 	def leaveMute(self):
 		if self.wasMuted == 0:
+			eDVBVolumecontrol.getInstance().openMixerOnMute() # fix for vuplus
 			eDVBVolumecontrol.getInstance().volumeToggleMute()
 
 	def __init__(self, session, StandbyCounterIncrease=True):
