@@ -38,7 +38,7 @@ public:
 	void volumeMute();
 	void volumeUnMute();
 	void volumeToggleMute();
-	void openMixerOnMute()
+	void openMixerOnMute();
 
 	int getVolume();
 	bool isMuted();
