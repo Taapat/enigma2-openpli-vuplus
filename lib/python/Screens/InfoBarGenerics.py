@@ -2183,7 +2183,7 @@ class InfoBarPiP:
 			if self.session.pipshown:
 				lastPiPServiceTimeout = int(config.usage.pip_last_service_timeout.value)
 				if lastPiPServiceTimeout >= 0:
-					self.lastPiPService = self.session.pip.getCurrentServiceReference()
+					self.lastPiPService = self.session.pip.getCurrentService()
 					if lastPiPServiceTimeout:
 						self.lastPiPServiceTimeoutTimer.startLongTimer(lastPiPServiceTimeout)
 				del self.session.pip
@@ -2194,12 +2194,12 @@ class InfoBarPiP:
 			self.session.pip = self.session.instantiateDialog(PictureInPicture)
 			self.session.pip.setAnimationMode(0)
 			self.session.pip.show()
-			newservice = self.lastPiPService or self.session.nav.getCurrentlyPlayingServiceReference() or (slist and slist.servicelist.getCurrent())
+			newservice = self.lastPiPService or self.session.nav.getCurrentlyPlayingServiceOrGroup() or (slist and slist.servicelist.getCurrent())
 			if self.session.pip.playService(newservice):
 				self.session.pipshown = True
 				self.session.pip.servicePath = slist and slist.getCurrentServicePath()
 			else:
-				newservice = self.session.nav.getCurrentlyPlayingServiceReference() or (slist and slist.servicelist.getCurrent())
+				newservice = self.session.nav.getCurrentlyPlayingServiceOrGroup() or (slist and slist.servicelist.getCurrent())
 				if self.session.pip.playService(newservice):
 					self.session.pipshown = True
 					self.session.pip.servicePath = slist and slist.getCurrentServicePath()
@@ -2243,7 +2243,6 @@ class InfoBarPiP:
 					self.session.pip.servicePath = currentServicePath
 					self.session.pip.servicePath[1] = currentBouquet
 				if slist and slist.dopipzap:
-					# This unfortunately won't work with subservices
 					slist.setCurrentSelection(self.session.pip.getCurrentService())
 
 	def movePiP(self):
