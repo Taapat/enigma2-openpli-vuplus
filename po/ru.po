@@ -782,6 +782,15 @@ msgstr "Произошла неизвестная ошибка!"
 msgid "And will put your receiver in standby over "
 msgstr "И переведет ваш ресивер в режим ожидания через "
 
+msgid "Animation Setup"
+msgstr "Настройка анимации"
+
+msgid "Animation Speed"
+msgstr "Скорость анимации"
+
+msgid "Animations"
+msgstr "Анимация"
+
 msgid "Any activity"
 msgstr "Любая активность"
 
@@ -2036,6 +2045,9 @@ msgstr " Директория содержит %s и %s."
 msgid "Disable"
 msgstr "Отключить"
 
+msgid "Disable Animations"
+msgstr "Отключить aнимацию"
+
 msgid "Disable Picture in Picture"
 msgstr "Отключить PiP (картинку в картинке)"
 
@@ -2821,6 +2833,12 @@ msgstr "Зеленая"
 
 msgid "Green boost"
 msgstr "Повышение зеленого"
+
+msgid "Grow drop"
+msgstr "Падение"
+
+msgid "Grow from left"
+msgstr "Слева"
 
 msgid "Guard interval"
 msgstr "Интервал защиты"
@@ -4352,6 +4370,9 @@ msgstr "Поляризация"
 msgid "Polish"
 msgstr "Польский"
 
+msgid "Popup"
+msgstr "Из центра"
+
 msgid "Port A"
 msgstr "Порт А"
 
@@ -5620,6 +5641,9 @@ msgstr "Аналогичные передачи:"
 msgid "Simple"
 msgstr "Простой"
 
+msgid "Simple fade"
+msgstr "Простое проявление-затухание"
+
 msgid "Simple titleset (compatibility for legacy players)"
 msgstr "Простой заголовок (совместимость с устаревшими плеерами)"
 
@@ -5668,11 +5692,20 @@ msgstr "Таймер сна"
 msgid "Sleeptimer edit"
 msgstr "Изменить таймер сна"
 
+msgid "Slide drop"
+msgstr "Слайд падение"
+
+msgid "Slide left to right"
+msgstr "Слайд слева направо"
+
 msgid "Slide picture in loop"
 msgstr "Циклический показ слайдов"
 
 msgid "Slide show interval (sec.)"
 msgstr "Интервал слайдшоу (сек.)"
+
+msgid "Slide top to bottom"
+msgstr "Слайд сверху вниз"
 
 #, python-format
 msgid "Slot %d"
@@ -9583,6 +9616,9 @@ msgstr "сервис находится в букете родительског
 
 msgid "Streaming clients info"
 msgstr "Информация о клиентах стриминга"
+
+msgid "Stripes"
+msgstr "Полосы"
 
 msgid "Transcoding: "
 msgstr "Транскодирование: "
