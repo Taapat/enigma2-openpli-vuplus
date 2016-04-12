@@ -7207,7 +7207,7 @@ msgid "Wakeup type"
 msgstr "Typ prebudenia"
 
 msgid "Warning: no LNB; using factory defaults."
-msgstr "Upozornenie: žiadne LNB; použije sa výrobné nastavenie.""
+msgstr "Upozornenie: žiadne LNB; použije sa výrobné nastavenie."
 
 msgid "Watch movies..."
 msgstr "Sledovať filmy..."
