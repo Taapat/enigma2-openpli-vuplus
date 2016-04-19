@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-03 22:21+0300\n"
+"POT-Creation-Date: 2016-04-19 21:44+0300\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -5687,6 +5687,9 @@ msgstr "Rādīt pozicioniera kustību"
 msgid "Show positioner position"
 msgstr "Rādīt pozicioniera pozīciju"
 
+msgid "Show record clock icons"
+msgstr "Rādīt ieraksta pulksteņa ikonu"
+
 msgid "Show record indicator"
 msgstr "Rādīt ieraksta indikatoru"
 
@@ -5740,6 +5743,9 @@ msgstr "Rādīt brīdinājumu pirms iestatīt 'Ignorēt konfliktus'"
 
 msgid "Show warning when timeshift is stopped"
 msgstr "Rādīt brīdinājumu kad laika aizture apturēta"
+
+msgid "Show/hide window"
+msgstr "Rādīt/slēpt logu"
 
 msgid "Shows live tv or informations on LCD."
 msgstr "Rādīt pārraides vai informāciju LCD."
