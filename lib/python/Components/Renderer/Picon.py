@@ -84,6 +84,8 @@ def getPiconName(serviceName):
 				#fallback to 1 for tv services with nonstandard servicetypes
 				fields[2] = '1'
 				pngname = findPicon('_'.join(fields))
+	return pngname  # I not use picon by channel name
+
 	if not pngname: # picon by channel name
 		name = ServiceReference(serviceName).getServiceName()
 		name = unicodedata.normalize('NFKD', unicode(name, 'utf_8', errors='ignore')).encode('ASCII', 'ignore')
