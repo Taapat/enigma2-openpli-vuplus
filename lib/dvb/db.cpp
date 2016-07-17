@@ -585,6 +585,14 @@ void eDVBDB::loadServicelist(const char *file)
 			line[len - 1] = '\0';
 		ePtr<eDVBService> s = new eDVBService;
 		s->m_service_name = line;
+
+		/* Change HD service type from 1 to 25 */
+		if (ref.getServiceType() == 1 && s->m_service_name.find(" HD") != std::string::npos)
+		{
+			eLog(5, "[eDVBDB] Change %s service type from 1 to 25", line);
+			ref.setServiceType(25);
+		}
+
 		s->genSortName();
 
 		if (!fgets(line, sizeof(line), f))
