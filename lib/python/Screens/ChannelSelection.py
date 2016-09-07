@@ -2531,7 +2531,8 @@ class SimpleChannelSelection(ChannelSelectionBase, SelectionEventInfo):
 				"keyTV": self.setModeTv,
 			})
 		self.bouquet_mark_edit = OFF
-		self.title = title
+		if isinstance(title, str):
+			self.maintitle = title
 		self.currentBouquet = currentBouquet
 		self.returnBouquet = returnBouquet
 		self.setService = setService
