@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-12 22:47+0300\n"
+"POT-Creation-Date: 2016-09-24 20:22+0300\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -375,11 +375,17 @@ msgstr "1.1"
 msgid "1.2"
 msgstr "1.2"
 
+msgid "128"
+msgstr "128"
+
 msgid "12V output"
 msgstr "12V izeja"
 
 msgid "13 V"
 msgstr "13 V"
+
+msgid "16"
+msgstr "16"
 
 msgid "16:10"
 msgstr "16:10"
@@ -414,6 +420,9 @@ msgstr "24"
 msgid "25"
 msgstr "25"
 
+msgid "256"
+msgstr "256"
+
 msgid "29.97"
 msgstr "29.97"
 
@@ -422,6 +431,9 @@ msgstr "3"
 
 msgid "30"
 msgstr "30"
+
+msgid "32"
+msgstr "32"
 
 msgid "3d mode"
 msgstr "3d režīms"
@@ -452,6 +464,9 @@ msgstr "5"
 
 msgid "6"
 msgstr "6"
+
+msgid "64"
+msgstr "64"
 
 msgid "7"
 msgstr "7"
@@ -1252,6 +1267,15 @@ msgstr "Kanāls:"
 msgid "Channellist menu"
 msgstr "Kanālu saraksta izvēlne"
 
+msgid "Channelnumber and picon"
+msgstr "Kanāla numurs un pikona"
+
+msgid "Channelnumber and servicename"
+msgstr "Kanāla numurs un nosaukums"
+
+msgid "Channelnumber, picon and servicename"
+msgstr "Kanāla numurs, pikona un nosaukums"
+
 msgid "Chap."
 msgstr "Nod."
 
@@ -1877,6 +1901,9 @@ msgstr "DTS dekodēšana"
 
 msgid "DUAL LAYER DVD"
 msgstr "Dubultslāņu DVD"
+
+msgid "DVB CI Delay"
+msgstr "DVB CI pauze"
 
 msgid "DVB drivers: "
 msgstr "Draiveri: "
@@ -4278,7 +4305,7 @@ msgstr "PiP iestatījumi"
 msgid "Picon"
 msgstr "Pikona"
 
-msgid "Picon and service name"
+msgid "Picon and servicename"
 msgstr "Pikona un kanāla nosaukums"
 
 msgid "Picture player"
@@ -5533,9 +5560,6 @@ msgstr ""
 "Kanāls neeksistē!\n"
 "(PMT lasīšanas noildze)"
 
-msgid "Service name"
-msgstr "Kanāla nosaukums"
-
 msgid ""
 "Service not found!\n"
 "(SID not found in PAT)"
@@ -5561,6 +5585,9 @@ msgid ""
 msgstr ""
 "Kanāls nav pieejams!\n"
 "Pārbaudiet uztvērēja konfigurāciju!"
+
+msgid "Servicename"
+msgstr "Kanāla nosaukums"
 
 msgid "Services"
 msgstr "Kanāli"
@@ -6908,9 +6935,6 @@ msgstr "Iestatīt griešanas iezīmi pašreizējā pozīcijā"
 
 msgid "Toggle dashed flickering line for this service"
 msgstr "Mainīt mirgojošo līniju kanālam"
-
-msgid "Toggle dashed flickering line for this service"
-msgstr "Minīt mirgojošo līniju kanālam"
 
 msgid "Toggle infoBar"
 msgstr "Infojosla"
@@ -8763,6 +8787,9 @@ msgstr "no lietotā VIENSLĀŅA datu nesēja."
 
 msgid "off"
 msgstr "izslēgts"
+
+msgid "off or wpa2 on"
+msgstr "izslēgts vai ieslēgts wpa2"
 
 msgid "offset is"
 msgstr "kompensē"
