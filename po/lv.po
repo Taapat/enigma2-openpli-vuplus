@@ -6907,6 +6907,9 @@ msgid "Toggle a cut mark at the current position"
 msgstr "Iestatīt griešanas iezīmi pašreizējā pozīcijā"
 
 msgid "Toggle dashed flickering line for this service"
+msgstr "Mainīt mirgojošo līniju kanālam"
+
+msgid "Toggle dashed flickering line for this service"
 msgstr "Minīt mirgojošo līniju kanālam"
 
 msgid "Toggle infoBar"
