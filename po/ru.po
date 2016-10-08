@@ -4108,7 +4108,7 @@ msgstr "Настройки PiP"
 msgid "Picon"
 msgstr "Пикон"
 
-msgid "Picon and service name"
+msgid "Picon and servicename"
 msgstr "Пикон и название сервиса"
 
 msgid "Picture player"
@@ -9998,7 +9998,7 @@ msgid "show"
 msgstr "показать"
 
 msgid "multi"
-msgstr "multi"
+msgstr "мульти"
 
 msgid "Set blocktimes by weekday"
 msgstr "Установка время игнорирования по дням"
@@ -10092,4 +10092,23 @@ msgstr "выкл. или wpa2 вкл."
 
 msgid "Symbolrate:"
 msgstr "Скорость потока:"
+
+msgid "Servicename"
+msgstr "Название сервиса"
+
+msgid "Channelnumber and servicename"
+msgstr "Номер канала и название сервиса"
+
+msgid "Channelnumber, picon and servicename"
+msgstr "Номер канала, пикон и название сервиса"
+
+msgid "Channelnumber and picon"
+msgstr "Номер канала и пикон"
+
+msgid "Configure whether multi channel PCM sound should be enabled."
+msgstr "Настройка, нужно ли включать мультиканальный PCM звук."
+
+msgid "A recording is currently running on the selected tuner. Please select a different tuner or consider to stop the recording to try again."
+msgstr "В текущее время идет запись. Пожалуйста, выберите другой тюнер такого же типа или остановите запись перед попыткой сканирования."
+
 
