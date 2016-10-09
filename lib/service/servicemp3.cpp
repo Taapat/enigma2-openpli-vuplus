@@ -2331,6 +2331,7 @@ void eServiceMP3::HandleTocEntry(GstMessage *msg)
 					m_cuesheet_changed = 1;
 					m_event((iPlayableService*)this, evCuesheetChanged);
 				}
+				}
 			}
 		}
 		//eDebug("[eServiceMP3] TOC entry from source %s processed", GST_MESSAGE_SRC_NAME(msg));
