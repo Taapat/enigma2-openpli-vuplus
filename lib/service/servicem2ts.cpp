@@ -33,8 +33,8 @@ private:
 	off_t m_length;
 	off_t lseek_internal(off_t offset, int whence);
 #ifdef HAVE_LIBUDFREAD
-	udfread *m_udf = NULL;
-	UDFFILE *m_udf_file = NULL;
+	udfread *m_udf;
+	UDFFILE *m_udf_file;
 #endif
 };
 
@@ -175,18 +175,20 @@ DEFINE_REF(eM2TSFile);
 eM2TSFile::eM2TSFile(const char *filename):
 	m_lock(),
 	m_sync_offset(0),
+	m_fd(-1),
 	m_current_offset(0),
-	m_length(0)
+	m_length(0),
+	m_udf(NULL),
+	m_udf_file(NULL)
 {
-	m_fd = -1;
 #ifdef HAVE_LIBUDFREAD
 	std::string iso_file = filename;
-	size_t pos = iso_file.find(".iso/BDMV") + 4;
+	size_t pos = iso_file.find(".iso/BDMV");
 	if (pos != std::string::npos)
 	{
 		eDebug("[eM2TSFile] try open as iso:%s", filename);
-		std::string file_path = iso_file.substr(pos);
-		iso_file = iso_file.substr(0, pos);
+		std::string file_path = iso_file.substr(pos + 4);
+		iso_file = iso_file.substr(0, pos + 4);
 		m_udf = udfread_init();
 		if (m_udf)
 		{
@@ -223,6 +225,8 @@ eM2TSFile::~eM2TSFile()
 	{
 		udfread_file_close(m_udf_file);
 		udfread_close(m_udf);
+		m_udf_file = NULL;
+		m_udf = NULL;
 		m_fd = -1;
 	}
 #endif
@@ -344,7 +348,6 @@ eServiceFactoryM2TS::eServiceFactoryM2TS()
 		std::list<std::string> extensions;
 		extensions.push_back("m2ts");
 		extensions.push_back("mts");
-		extensions.push_back("iso");
 		sc->addServiceFactory(eServiceFactoryM2TS::id, this, extensions);
 	}
 }
