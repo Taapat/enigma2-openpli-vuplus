@@ -193,10 +193,7 @@ eM2TSFile::eM2TSFile(const char *filename):
 		if (m_udf)
 		{
 			if (udfread_open(m_udf, iso_file.c_str()) < 0)
-			{
 				eDebug("[eM2TSFile] udfread_open(%s) failed!", iso_file.c_str());
-				udfread_close(m_udf);
-			}
 			else
 			{
 				m_udf_file = udfread_file_open(m_udf, file_path.c_str());
@@ -204,6 +201,7 @@ eM2TSFile::eM2TSFile(const char *filename):
 				{
 					eDebug("[eM2TSFile] udfread_file_open(%s) failed!", file_path.c_str());
 					udfread_close(m_udf);
+					m_udf = NULL;
 				}
 				else
 					m_fd = 0;
