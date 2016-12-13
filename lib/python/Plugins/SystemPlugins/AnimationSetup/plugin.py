@@ -4,10 +4,10 @@ from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.MenuList import MenuList
 from Components.Sources.StaticText import StaticText
-from Components.config import config, ConfigNumber, ConfigSelectionNumber, getConfigListEntry
+from Components.config import config, ConfigNumber, ConfigSelection, ConfigSelectionNumber, getConfigListEntry
 from Plugins.Plugin import PluginDescriptor
 
-from enigma import setAnimation_current, setAnimation_speed
+from enigma import setAnimation_current, setAnimation_speed, setAnimation_current_listbox
 
 
 g_animation_paused = False
@@ -16,6 +16,7 @@ g_orig_doClose = None
 
 config.misc.window_animation_default = ConfigNumber(default = 6)
 config.misc.window_animation_speed = ConfigSelectionNumber(1, 30, 1, default = 20)
+config.misc.listbox_animation_default = ConfigSelection(default = "2", choices = [("0", _("Disable")), ("1", _("Enable")), ("2", _("Same behavior as current animation"))])
 
 class AnimationSetupConfig(ConfigListScreen, Screen):
 	skin = """
@@ -62,14 +63,19 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 	def keyGreen(self):
 		config.misc.window_animation_speed.save()
 		setAnimation_speed(int(config.misc.window_animation_speed.value))
+		setAnimation_speed(int(config.misc.window_animation_speed.value))
+		config.misc.listbox_animation_default.save()
+		setAnimation_current_listbox(int(config.misc.listbox_animation_default.value))
 		self.close()
 
 	def keyRed(self):
 		config.misc.window_animation_speed.cancel()
+		config.misc.listbox_animation_default.cancel()
 		self.close()
 
 	def keyYellow(self):
 		config.misc.window_animation_speed.value = 20
+		config.misc.listbox_animation_default.value = "2"
 		self.makeConfigList()
 
 	def keyLeft(self):
@@ -81,8 +87,8 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 	def makeConfigList(self):
 		self.entrylist = []
 
-		entrySpeed = getConfigListEntry(_("Animation Speed"), config.misc.window_animation_speed)
-		self.entrylist.append(entrySpeed)
+		self.entrylist.append(getConfigListEntry(_("Animation Speed"), config.misc.window_animation_speed))
+		self.entrylist.append(getConfigListEntry(_("Enable Focus Animation"), config.misc.listbox_animation_default))
 		self["config"].list = self.entrylist
 		self["config"].l.setList(self.entrylist)
 
@@ -166,11 +172,13 @@ class AnimationSetupScreen(Screen):
 			config.misc.window_animation_default.value = key
 			config.misc.window_animation_default.save()
 			setAnimation_current(key)
+			setAnimation_current_listbox(int(config.misc.listbox_animation_default.value))
 		self.close()
 
 	def keyclose(self):
 		setAnimation_current(config.misc.window_animation_default.value)
 		setAnimation_speed(int(config.misc.window_animation_speed.value))
+		setAnimation_current_listbox(int(config.misc.listbox_animation_default.value))
 		self.close()
 
 	def config(self):
@@ -225,6 +233,7 @@ def startAnimationSetup(menuid):
 def sessionAnimationSetup(session, reason, **kwargs):
 	setAnimation_current(config.misc.window_animation_default.value)
 	setAnimation_speed(int(config.misc.window_animation_speed.value))
+	setAnimation_current_listbox(int(config.misc.listbox_animation_default.value))
 
 	global g_orig_show, g_orig_doClose
 	if g_orig_show is None:
