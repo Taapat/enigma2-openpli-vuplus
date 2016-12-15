@@ -16,7 +16,7 @@ g_orig_doClose = None
 
 config.misc.window_animation_default = ConfigNumber(default = 6)
 config.misc.window_animation_speed = ConfigSelectionNumber(1, 30, 1, default = 20)
-config.misc.listbox_animation_default = ConfigSelection(default = "2", choices = [("0", _("Disable")), ("1", _("Enable")), ("2", _("Same behavior as current animation"))])
+config.misc.listbox_animation_default = ConfigSelection(default = "0", choices = [("0", _("Disable")), ("1", _("Enable")), ("2", _("Same behavior as current animation"))])
 
 class AnimationSetupConfig(ConfigListScreen, Screen):
 	skin = """
@@ -75,7 +75,7 @@ class AnimationSetupConfig(ConfigListScreen, Screen):
 
 	def keyYellow(self):
 		config.misc.window_animation_speed.value = 20
-		config.misc.listbox_animation_default.value = "2"
+		config.misc.listbox_animation_default.value = "0"
 		self.makeConfigList()
 
 	def keyLeft(self):
