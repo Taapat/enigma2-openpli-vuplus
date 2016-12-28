@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-13 20:52+0200\n"
+"POT-Creation-Date: 2016-12-28 19:34+0200\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -2910,6 +2910,13 @@ msgid "G"
 msgstr "G"
 
 msgid ""
+"GUI needs a restart to apply a new language\n"
+"Do you want to restart the GUI now?"
+msgstr ""
+"Lai lietotu jauno valodu nepieciešams pārstartēt enigmu.\n"
+"Vai vēlaties pārstartēt?"
+
+msgid ""
 "GUI needs a restart to apply a new skin\n"
 "Do you want to restart the GUI now?"
 msgstr ""
@@ -4648,6 +4655,9 @@ msgstr "Pozicioniera iestatījumi"
 msgid "Positioner setup log"
 msgstr "Pozicioniera iestatījumu logs"
 
+msgid "Power on display"
+msgstr "Ieslēgt displeju"
+
 msgid "Power threshold in mA"
 msgstr "Barošanas robežvērtība mA"
 
@@ -5854,6 +5864,9 @@ msgstr "Parādīt jaunākās izmaiņas"
 msgid "Show latest upgrade log"
 msgstr "Rādīt pēdējās atjaunošanas žurnālu"
 
+msgid "Show menu numbers"
+msgstr "Rādīt iestatījumiem numurus"
+
 msgid "Show menu paths"
 msgstr "Rādīt iestatījumu ceļu"
 
@@ -6810,6 +6823,12 @@ msgstr "Atļauj iestatīt HDMI Colorspace Auto vai RGB režīmā"
 
 msgid "This option allows you to hide and sort menu entries. When selecting user you can change order and hide menu items via the blue button"
 msgstr "Atļauj kārtot un noslēpt iestatījumus. Ja izvēlēts lietotāja, jūs varat kārtot un slēpt iestatījumus izmantojot zilo pogu"
+
+msgid "This option allows you to power off the display."
+msgstr "Atļauj izslēgt displeju."
+
+msgid "This option allows you to show menu number quick links."
+msgstr "Attēlo ciparus pie iestatījumiem lai tos izmantotu ātrai piekļuvei"
 
 msgid "This option allows you to show menu paths."
 msgstr "Attēlo iestatījumu ceļu noformējumā."
