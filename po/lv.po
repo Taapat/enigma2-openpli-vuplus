@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 19:34+0200\n"
+"POT-Creation-Date: 2017-01-21 00:41+0200\n"
 "PO-Revision-Date: 2014-11-12 00:49+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -1390,6 +1390,9 @@ msgstr "Izpilda komandu..."
 msgid "Command order"
 msgstr "Komandu secība"
 
+msgid "Commit info"
+msgstr "Izmaiņas"
+
 msgid "Common Interface"
 msgstr "Common interfeiss"
 
@@ -1465,6 +1468,9 @@ msgstr "Uzstāda vai un kādā platumā kolona tiks attēlota kanālu srakstā."
 
 msgid "Configure if behind the subtitles a background is shown."
 msgstr "Uzstāda vai subtitriem lietot tumšu fonu."
+
+msgid "Configure if service picons will be shown in display (when supported by the skin)."
+msgstr "Uzstāda vai pikonas tiks rādītas displejā (ja to atbalsta noformējums)."
 
 msgid "Configure if service picons will be shown in the channel selection list."
 msgstr "Uzstāda vai kanālu pikonas tiks rādītas kanālu sarakstā."
@@ -1815,6 +1821,9 @@ msgstr "Izveidot DVD-ISO"
 
 msgid "Create new folder and exit"
 msgstr "Izveidot jaunu mapi un iziet"
+
+msgid "Create seperate radio userbouquet"
+msgstr "Izveidot atsevišķas radio buķetes"
 
 #, python-format
 msgid "Creating directory %s failed."
@@ -2294,6 +2303,9 @@ msgstr "Vai tiešām vēlaties iziet no šī veidņa?"
 msgid "Do you want to reboot your receiver?"
 msgstr "Vai vēlaties pārstartēt uztvērēju?"
 
+msgid "Do you want to remove all the crahs logfiles"
+msgstr "Vai vēlaties dzēst visus logfailus"
+
 msgid "Do you want to remove the package:\n"
 msgstr "Vai vēlaties dzēst pakotni:\n"
 
@@ -2716,26 +2728,33 @@ msgstr "F"
 msgid "F1/F3/F4"
 msgstr "F1/F3/F4"
 
-msgid "FBC Unicable"
-msgstr "FBC Unicable"
+msgid "FBC SCR (Unicable/JESS)"
+msgstr "FBC SCR (Unicable/JESS)"
 
-msgid "FBC automatic loop through"
-msgstr "FBC automātiski loop cauri"
+msgid "FBC automatic"
+msgstr "FBC automātiski"
 
 msgid ""
-"FBC automatic loop through\n"
-"inactive"
+"FBC automatic\n"
+"connected to"
 msgstr ""
-"FBC automātiski loop cauri\n"
-"neaktīvs"
+"FBC automātiski\n"
+"saistīts ar"
 
 #, python-format
 msgid ""
-"FBC automatic loop through\n"
-"linked to %s"
+"FBC automatic\n"
+"connected to %s"
 msgstr ""
-"FBC automātiski loop cauri\n"
+"FBC automātiski\n"
 "saistīts ar %s"
+
+msgid ""
+"FBC automatic\n"
+"inactive"
+msgstr ""
+"FBC automātiski\n"
+"neaktīvs"
 
 msgid "FEC"
 msgstr "FEC"
@@ -3590,6 +3609,9 @@ msgstr "Noenkuroties:"
 msgid "Log results to /tmp"
 msgstr "Žurnalēt rezultātus /tmp"
 
+msgid "Logfile does not exist anymore"
+msgstr "Logfaili vairs neeksistē"
+
 msgid "Long filenames"
 msgstr "Garie failu vārdi"
 
@@ -3599,8 +3621,8 @@ msgstr "Ilgstoša taustiņa nospiešana"
 msgid "Longitude"
 msgstr "Garums"
 
-msgid "Loop through to"
-msgstr "Loop caur"
+msgid "Loop through from"
+msgstr "Loop cauri no"
 
 msgid "Luxembourgish"
 msgstr "Luksemburgiešu"
@@ -5044,6 +5066,9 @@ msgstr "Dzēst iezīmi"
 msgid "Remove a nameserver entry"
 msgstr "Dzēst DNS ierakstu"
 
+msgid "Remove all logfiles"
+msgstr "Dzēst visus logfailus"
+
 msgid "Remove bookmark"
 msgstr "Dzēst grāmatzīmi"
 
@@ -5058,6 +5083,9 @@ msgstr "Dzēst no miskastes pēc (dienām)"
 
 msgid "Remove plugins"
 msgstr "Dzēst spraudņus"
+
+msgid "Remove this logfile"
+msgstr "Dzēst šo logfailu"
 
 msgid "Remove title"
 msgstr "Dzēst virsrakstu"
@@ -5239,6 +5267,15 @@ msgstr "S-Video"
 
 msgid "SCPC optimized search range"
 msgstr "SCPC optimizēta meklēšana"
+
+msgid "SCR (Unicable/JESS)"
+msgstr "SCR (Unicable/JESS"
+
+msgid "SCR JESS"
+msgstr "SCR JESS"
+
+msgid "SCR Unicable"
+msgstr "SCR Unicable"
 
 msgid "SINGLE LAYER DVD"
 msgstr "SINGLE LAYER DVD"
@@ -5888,6 +5925,9 @@ msgstr "Parādīt paketes kuras tiks atjaunotas"
 msgid "Show picons in channel selection list"
 msgstr "Rādīt pikonas kanālu srakstā"
 
+msgid "Show picons in display"
+msgstr "Rādīt displejā pikonas"
+
 msgid "Show positioner movement"
 msgstr "Rādīt pozicioniera kustību"
 
@@ -6113,6 +6153,9 @@ msgstr "Programmatūras atjaunināšana"
 
 msgid "Softwaremanager information"
 msgstr "Programmatūras pārvaldnieka informācija"
+
+msgid "Some error occured - Please try later"
+msgstr "Ir gadījusies kāda kļūda - Lūdzu pamēginiet vēlāk"
 
 msgid "Some plugins are not available:\n"
 msgstr "Daži spraudņi nav pieejami:\n"
@@ -6828,7 +6871,7 @@ msgid "This option allows you to power off the display."
 msgstr "Atļauj izslēgt displeju."
 
 msgid "This option allows you to show menu number quick links."
-msgstr "Attēlo ciparus pie iestatījumiem lai tos izmantotu ātrai piekļuvei"
+msgstr "Attēlo ciparus pie iestatījumiem lai tos izmantotu ātrai piekļuvei."
 
 msgid "This option allows you to show menu paths."
 msgstr "Attēlo iestatījumu ceļu noformējumā."
@@ -7083,6 +7126,9 @@ msgstr "Miskaste"
 msgid "Tries left:"
 msgstr "Atlikuši mēģinājumi:"
 
+msgid "Troubleshoot"
+msgstr "Informācija"
+
 msgid "Try to find used transponders in cable network.. please wait..."
 msgstr "Mēģina atrast izmantojamus transponderus kabeļu tīklā... lūdzu gaidiet..."
 
@@ -7200,12 +7246,6 @@ msgstr "Neapstrādāta poga"
 
 msgid "Unhide parental control services"
 msgstr "Parādīt servisus ar vecāku aizsardzību"
-
-msgid "Unicable"
-msgstr "Unicable"
-
-msgid "Unicable/JESS"
-msgstr "Unicable/JESS"
 
 msgid "Uninstall"
 msgstr "Atinstalēt"
