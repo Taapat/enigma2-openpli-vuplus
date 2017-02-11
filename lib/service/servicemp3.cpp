@@ -85,6 +85,7 @@ eServiceFactoryMP3::eServiceFactoryMP3()
 		extensions.push_back("mp3");
 		extensions.push_back("wav");
 		extensions.push_back("wave");
+		extensions.push_back("oga");
 		extensions.push_back("ogg");
 		extensions.push_back("flac");
 		extensions.push_back("m4a");
@@ -492,7 +493,7 @@ eServiceMP3::eServiceMP3(eServiceReference ref):
 		ext = filename + strlen(filename);
 
 	m_sourceinfo.audiotype = atUnknown;
-	if ( (strcasecmp(ext, ".mpeg") && strcasecmp(ext, ".mpg") && strcasecmp(ext, ".vob") && strcasecmp(ext, ".bin") && strcasecmp(ext, ".dat") ) == 0 )
+	if ( (strcasecmp(ext, ".mpeg") && strcasecmp(ext, ".mpe") && strcasecmp(ext, ".mpg") && strcasecmp(ext, ".vob") && strcasecmp(ext, ".bin") && strcasecmp(ext, ".dat") ) == 0 )
 		m_sourceinfo.containertype = ctMPEGPS;
 	else if ( strcasecmp(ext, ".ts") == 0 )
 		m_sourceinfo.containertype = ctMPEGTS;
