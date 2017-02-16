@@ -178,12 +178,11 @@ class CommitInfo(Screen):
 
 		self.project = 0
 		self.projects = [
-			("enigma2-openpli-vuplus", "Enigma2 vuplus"),
-			("vuplus-fulan-openpli-oe-core", "vuplus fulan Openpli Oe Core"),
-			("enigma2-plugins", "Enigma2 Plugins"),
-			("aio-grab", "Aio Grab"),
-			("gst-plugin-dvbmediasink", "Gst Plugin Dvbmediasink"),
-			("tuxtxt", "Tuxtxt")
+			("https://api.github.com/repos/Taapat/enigma2-openpli-vuplus/commits", "Enigma2 vuplus"),
+			("https://api.github.com/repos/Taapat/vuplus-fulan-openpli-oe-core/commits", "vuplus fulan Openpli Oe Core"),
+			("https://api.github.com/repos/openpli/enigma2-plugins/commits", "Enigma2 Plugins"),
+			("https://api.github.com/repos/openpli/aio-grab/commits", "Aio Grab"),
+			("https://api.github.com/repos/christophecvr/gstreamer1.0-plugin-multibox-dvbmediasink/commits/openatv-dev", "Gst Plugin Dvbmediasink"),
 		]
 		self.cachedProjects = {}
 		self.Timer = eTimer()
@@ -191,10 +190,7 @@ class CommitInfo(Screen):
 		self.Timer.start(50, True)
 
 	def readGithubCommitLogs(self):
-		if 'vuplus' in self.projects[self.project][0]:
-			url = 'https://api.github.com/repos/taapat/%s/commits' % self.projects[self.project][0]
-		else:
-			url = 'https://api.github.com/repos/openpli/%s/commits' % self.projects[self.project][0]
+		url = self.projects[self.project][0]
 		commitlog = ""
 		from datetime import datetime
 		from json import loads
