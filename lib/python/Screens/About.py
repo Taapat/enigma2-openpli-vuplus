@@ -182,7 +182,7 @@ class CommitInfo(Screen):
 			("https://api.github.com/repos/Taapat/vuplus-fulan-openpli-oe-core/commits", "vuplus fulan Openpli Oe Core"),
 			("https://api.github.com/repos/openpli/enigma2-plugins/commits", "Enigma2 Plugins"),
 			("https://api.github.com/repos/openpli/aio-grab/commits", "Aio Grab"),
-			("https://api.github.com/repos/christophecvr/gstreamer1.0-plugin-multibox-dvbmediasink/commits/openatv-dev", "Gst Plugin Dvbmediasink"),
+			("https://api.github.com/repos/christophecvr/gstreamer1.0-plugin-multibox-dvbmediasink/commits?sha=openatv-dev", "Gst Plugin Dvbmediasink"),
 		]
 		self.cachedProjects = {}
 		self.Timer = eTimer()
