@@ -75,7 +75,7 @@ class InfoHandler(xml.sax.ContentHandler):
 				self.attributes["details"] = str(attrs["details"])
 			if "name" in attrs:
 				self.attributes["name"] = str(attrs["name"])
-			if "packagename" in attrs):
+			if "packagename" in attrs:
 				self.attributes["packagename"] = str(attrs["packagename"])
 			if "packagetype" in attrs:
 				self.attributes["packagetype"] = str(attrs["packagetype"])
