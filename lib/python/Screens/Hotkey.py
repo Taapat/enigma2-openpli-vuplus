@@ -467,7 +467,7 @@ class HotkeySetupSelect(Screen):
 
 class hotkeyActionMap(ActionMap):
 	def action(self, contexts, action):
-		if (action in tuple(x[1] for x in getHotkeys()) and action in self.actions:
+		if action in tuple(x[1] for x in getHotkeys()) and action in self.actions:
 			res = self.actions[action](action)
 			if res is not None:
 				return res
@@ -477,7 +477,7 @@ class hotkeyActionMap(ActionMap):
 
 class helpableHotkeyActionMap(HelpableActionMap):
 	def action(self, contexts, action):
-		if (action in tuple(x[1] for x in getHotkeys()) and action in self.actions:
+		if action in tuple(x[1] for x in getHotkeys()) and action in self.actions:
 			res = self.actions[action](action)
 			if res is not None:
 				return res
