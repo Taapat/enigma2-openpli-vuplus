@@ -1,6 +1,4 @@
-from enigma import eDVBResourceManager,\
-	eDVBFrontendParametersSatellite, eDVBFrontendParametersTerrestrial, \
-	eDVBFrontendParametersATSC
+from enigma import eDVBResourceManager, eDVBFrontendParametersSatellite, eDVBFrontendParametersTerrestrial
 
 from Screens.ScanSetup import ScanSetup, buildTerTransponder
 from Screens.ServiceScan import ServiceScan
@@ -82,7 +80,7 @@ class Satfinder(ScanSetup, ServiceScan):
 			self.feid = int(self.satfinder_scan_nims.value)
 			self.createSetup()
 			self.prepareFrontend()
-			if self.frontend == None:
+			if self.frontend is None:
 				msg = _("Tuner not available.")
 				if self.session.nav.RecordTimer.isRecording():
 					msg += _("\nRecording in progress.")
